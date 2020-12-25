@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import PropTypes from "prop-types";
 
 class App extends React.Component {
@@ -7,11 +8,13 @@ class App extends React.Component {
     movies: [],
   };
 
-  // Component 생성될 때 바로 시작되는 메소드
+  getMovies = async () => {
+    const movies = await axios.get("https://yts-proxy.now.sh/list_movies.json");
+    return movies;
+  };
+
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({ isLoading: false, book: true });
-    }, 6000);
+    this.getMovies();
   }
 
   render() {
