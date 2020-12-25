@@ -38,7 +38,6 @@ class Home extends React.Component {
             {isLoading
               ? "Loading..."
               : movies.map((movie) => {
-                  console.log(movie);
                   return (
                     <Movie
                       key={movie.id}
