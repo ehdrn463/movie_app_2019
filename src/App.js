@@ -7,11 +7,15 @@ class App extends React.Component {
   };
 
   add = () => {
-    console.log("add");
+    // setState: 새로운 상태를 객체로 지정해줌
+    // setState를 호출할 때마다 react는 새로운 state와 함꼐 ender function을 호출함
+    // this.setState({ count: this.state.cont + 1 });
+    this.setState((current) => ({ count: current.count + 1 }));
   };
 
   minus = () => {
-    console.log("minus");
+    // this.setState({ count: this.state.cont - 1 });
+    this.setState((current) => ({ count: current.count - 1 }));
   };
 
   render() {
