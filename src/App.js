@@ -2,9 +2,26 @@ import React from "react";
 import PropTypes from "prop-types";
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log("hello");
+  }
+
   state = {
     count: 0,
   };
+
+  componentDidMount() {
+    console.log("component rendered");
+  }
+
+  componentDidUpdate() {
+    console.log("I just updated");
+  }
+
+  componentWillUnmount() {
+    console.log("Goodbye, crelue");
+  }
 
   add = () => {
     // setState: 새로운 상태를 객체로 지정해줌
@@ -19,6 +36,7 @@ class App extends React.Component {
   };
 
   render() {
+    console.log("Being Rendering");
     return (
       <div>
         <h1> The number is : {this.state.count} </h1>
